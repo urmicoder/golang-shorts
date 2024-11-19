@@ -21,24 +21,22 @@ func median(a []int, n int) int {
 		return 0
 	}
 	mid := 0
-	sum := 0
 	average := 0
-	for _, value := range arr {
-		sum += value
-		average = sum / 2
-		if n%2 == 0 {
-			mid = average
-		} else {
-			mid = n / 2
-		}
+	mid1 := arr[n/2-1]
+	mid2 := arr[n/2]
+	average = (mid1 + mid2) / 2
+	if n%2 == 0 {
+		mid = average
+	} else {
+		mid = arr[n/2]
 	}
 
 	return mid
 }
 
 func main() {
-	arr := []int{1, 2, 3, 4, 5}
-	n := 5
+	arr := []int{2, 5, 1}
+	n := len(arr)
 	midArray := median(arr, n)
 	fmt.Println(midArray)
 }
