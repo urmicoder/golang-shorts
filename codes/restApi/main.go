@@ -49,7 +49,8 @@ func NewHttpTransport(s Service) *httpTransport {
 	return &httpTransport{Service: s}
 }
 
-type AddReq struct{}
+type AddReq struct {
+}
 type AddRes struct {
 	Success bool `json:"success"`
 }
